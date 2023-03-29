@@ -118,22 +118,118 @@
     </style>
 </head>
 <body class="">
+    <div class="login_form_wrapper" id="auth_page">
+        <div class="content"  id="login_form">
+            <form class="sign_in_form">
+                <h3 class="form-title">Welcome</h3>
+                <div class="form-group my-2">
+                    <i class="fa fa-user"></i>
+                    <input type="text"
+                            style="font-family: 'Helvetica', FontAwesome, sans-serif; margin-bottom: 15px;"
+                            placeholder="Username"
+                            class="form-control"
+                            id="login_username"
+                            name="username"
+                            required />
+                </div>
+                <div class="form-group my-2">
+                    <i class="fa fa-lock"></i>
+                    <input type="password"
+                           style="font-family: 'Helvetica', FontAwesome, sans-serif; margin-bottom: 15px;"
+                           placeholder="Password"
+                           class="form-control"
+                           id="login_password"
+                           name="password"
+                           required />
+                </div>
+                <div class="form-actions" style="display:flex; justify-content:center">
+                    <button 
+                            id="login-submit"
+                            style="width:200px"
+                            class="btn text-light">
+                        Login
+                    </button>
+                    <button style="margin-left:10px; width:200px"
+                            id="swiss_register"
+                            class="btn text-light ">
+                        Register
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="content" id="register_form">
+            <form class="sign_in_form" id="register_form">
+                <i class="fa fa-arrow-left" id="back-arrow"></i>
+                <h3 class="form-title">Register</h3>
+                <div class="form-group my-2">
+                    <i class="fa fa-user"></i>
+                    <input type="text"
+                            style="font-family: 'Helvetica', FontAwesome, sans-serif; margin-bottom: 15px;"
+                            placeholder="Username"
+                            class="form-control"
+                            id="login_username"
+                            name="username"
+                            required />
+                </div>
+                <div class="form-group my-2">
+                    <i class="fa fa-user"></i>
+                    <input type="text"
+                            style="font-family: 'Helvetica', FontAwesome, sans-serif; margin-bottom: 15px;"
+                            placeholder="Full name"
+                            class="form-control"
+                            id="full_id"
+                            name="full_name"
+                            required />
+                </div>
+                <div class="form-group my-2">
+                    <i class="fa fa-envelope"></i>
+                    <input type="text"
+                           style="font-family: 'Helvetica', FontAwesome, sans-serif; margin-bottom: 15px;"
+                           placeholder="email"
+                           class="form-control"
+                           id="email"
+                           name="email"
+                           required />
+                </div>
+                <div class="form-group my-2">
+                    <i class="fa fa-lock"></i>
+                    <input type="password"
+                           style="font-family: 'Helvetica', FontAwesome, sans-serif; margin-bottom: 15px;"
+                           placeholder="Password"
+                           class="form-control"
+                           id="login_password"
+                           name="password"
+                           required />
+                </div>
+                <div class="form-actions" style="display:flex; justify-content: center;">
+                    <button type="text"
+                            id="register_btn"
+                            style="width:200px"
+                            class="btn text-light float-right">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
   
-    <div  id="user_page"">
+    <div  id="user_page">
 
         <div style="background:#A02A1E; padding-left:100px; padding-right:100px; padding-bottom:20px; padding-top:50px">
             <div class="">
 
-                <h4 style="color:black; font-weight:600; height:50px" >  NETWORK INTERIGENCE MONITORING</h4>
+                <h4 style="color:black; font-weight:600; height:50px" >  NETWORK INTELLIGENCE MONITORING</h4>
                 <div style="display:flex">
                   
-                     <li class="dropdown-toggle" style="padding:5px; list-style-type:none; color:white">Statistics</li>
+                     <li  style="padding:5px; list-style-type:none; color:white">Statistics</li>
+                     
                      <div style="padding:10px"></div>
                    
                   
-                     <li class="dropdown-toggle" style="padding:5px; list-style-type:none; color:white">Trace</li>
+                     <li  style="padding:5px; list-style-type:none; color:white" id="trigger_user_button">Trace</li>
                     
-                     <li style="padding:5px; list-style-type:none; color:white">Configure</li>
+                     <li style="padding:5px; list-style-type:none; color:white; cursor:pointer" id="configure_user_button">Configure</li>
                      <li class="dropdown-toggle" style="padding:5px; list-style-type:none; color:white" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Users</li>
                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" id="add_user_button">Add user</a>
@@ -278,6 +374,29 @@
            
         </div>
 
+        <div style="background:#e8ecf8; padding-left:100px; padding-right:100px; padding-bottom:20px; padding-top:10px; height:900px" id="user_configure" >
+            <div style="padding-bottom:10px">
+                <div>Configure | New configure</div>
+            </div>
+            <div style="padding:30px; background:white">
+
+                <div style="display:flex; color:#5e5e5d">
+                    <i class="fa fa-cogs"></i>
+                    <h6 style="padding-left:5px">CONFIGURE STACK</h6>  
+                </div>
+                <hr style="color:silver">
+
+            </div>
+          
+
+          
+
+            
+
+   
+           
+        </div>
+
         <!-- Add user -->
 
         <div style="background:#e8ecf8; padding-left:100px; padding-right:100px; padding-bottom:20px; padding-top:10px; height:900px" id="add_user" >
@@ -300,7 +419,7 @@
                 <div style="display:flex; color:#5e5e5d" >
                     <i class="fa fa-user"></i>
 
-                    <h6>USERS</h6>  
+                    <h6>USERS</h6>
                 </div>
                 <hr style="color:silver">
                 <div style="padding-left: 50px; padding-right:100px">
@@ -344,6 +463,46 @@
    
            
         </div>
+
+        <!-- Add trigger -->
+        <div style="background:#e8ecf8; padding-left:100px; padding-right:100px; padding-bottom:20px; padding-top:10px; height:900px" id="add_trigger" >
+            <div style="padding-bottom:10px">
+                <div>Trace| Trigger</div>
+            </div>
+    
+            <div style="padding:5px"></div>
+
+            <div style="padding:30px; background:white">
+
+                <div style="display:flex; color:#5e5e5d" >
+                    <i class="fa fa-user"></i>
+
+                    <h6>TRACE</h6>  
+                </div>
+                <hr style="color:silver">
+                <div style="padding-left: 50px; padding-right:100px">
+                    <div style="display:flex">
+                        <i class="fa fa-user" style="position: relative; top:15px; left:30px; font-size:20px"></i>
+                        <input type="text" placeholder="Enter MSISDN" style="height: 50px;  padding-left:50px">
+                    </div>
+                   
+                    <div style="padding:5px"></div>
+                    <div style="display:flex; justify-content:center">
+
+                        <button style="background:#A02A1E; height:50px; border: 1px solid transparent; color:white; width:30%"> SUBMIT</button>
+                    </div>
+    
+                </div>
+
+            </div>
+
+            
+
+   
+           
+        </div>
+
+        <!-- Edit user -->
         <div style="background:#e8ecf8; padding-left:100px; padding-right:100px; padding-bottom:20px; padding-top:10px; height:900px" id="edit_user" >
             <div style="padding-bottom:10px">
                 <div>User | Edit user</div>
@@ -453,9 +612,11 @@
     $(function() {
         $("#add_user_button").click(function() {
           $("#add_user").show();
+          $("#edit_user").hide();
           $("#user_lists").hide();
           $("#register_form").hide();
           $("#login_form").hide();
+          $("#user_delete").hide();
         });
       });
     //list user button is clicked
@@ -463,7 +624,9 @@
         $("#list_user_button").click(function() {
           $("#add_user").hide();
           $("#user_lists").show();
+          $("#edit_user").edit();
           $("#register_form").hide();
+          $("#user_delete").hide();
           $("#login_form").hide();
         });
       });
@@ -473,6 +636,7 @@
           $("#add_user").hide();
           $("#edit_user").show();
           $("#user_lists").hide();
+          $("#user_delete").hide();
           $("#register_form").hide();
           $("#login_form").hide();
         });
@@ -483,6 +647,30 @@
           $("#add_user").hide();
           $("#edit_user").hide();
           $("#user_delete").show();
+          $("#user_lists").hide();
+          $("#register_form").hide();
+          $("#login_form").hide();
+        });
+      });
+      //Configure button is clicked
+    $(function() {
+        $("#configure_user_button").click(function() {
+          $("#add_user").hide();
+          $("#edit_user").hide();
+          $("#user_delete").hide();
+          $("#user_configure").show();
+          $("#user_lists").hide();
+          $("#register_form").hide();
+          $("#login_form").hide();
+        });
+      });
+    $(function() {
+        $("#trigger_user_button").click(function() {
+          $("#add_user").hide();
+          $("#edit_user").hide();
+          $("#user_delete").hide();
+          $("#user_configure").hide();
+          $("#add_trigger").show();
           $("#user_lists").hide();
           $("#register_form").hide();
           $("#login_form").hide();
