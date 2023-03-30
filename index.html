@@ -222,14 +222,26 @@
                 <h4 style="color:black; font-weight:600; height:50px" >  NETWORK INTELLIGENCE MONITORING</h4>
                 <div style="display:flex">
                   
-                     <li  style="padding:5px; list-style-type:none; color:white">Statistics</li>
+                  
                      
-                     <div style="padding:10px"></div>
+                     <div class="btn-group">
+                        <li  style="padding:5px; list-style-type:none; color:white"  class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                          Statistics
+                        </li>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item"  id="performance_counter">Performance counters</a>
+                          <a class="dropdown-item" id="kernel_extension">Kernel Extension Module </a>
+                          <a class="dropdown-item" id="servce_extension">Service extension Module</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" id="supervisor_extension">Supervisor Extension modules</a>
+                        </div>
+                      </div>
                    
                   
                      <li  style="padding:5px; list-style-type:none; color:white" id="trigger_user_button">Trace</li>
                     
                      <li style="padding:5px; list-style-type:none; color:white; cursor:pointer" id="configure_user_button">Configure</li>
+                     <div class="btn-group">
                      <li class="dropdown-toggle" style="padding:5px; list-style-type:none; color:white" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Users</li>
                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" id="add_user_button">Add user</a>
@@ -238,7 +250,21 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" id="delete_user_button" style="color:#a73128">Delete user</a>
                       </div>
-                     <li style="padding:5px; list-style-type:none; color:white">Groups</li>
+                    </div>
+                     <!-- <li style="padding:5px; list-style-type:none; color:white">Groups</li> -->
+                     <div class="btn-group">
+                        <li style="padding:5px; list-style-type:none; color:white" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                          Groups
+                        </li>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" id="add_group_button"> Add Groups</a>
+                          <a class="dropdown-item" id="list_group_button">List groups</a>
+                          <a class="dropdown-item" id="edit_group_button">Edit groups</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" id="delete_groups_button">Delete groups</a>
+                        </div>
+                      </div>
+                      
                 </div>
             </div>
             
@@ -247,19 +273,11 @@
 
 
         <!-- User list -->
-        <div style="background:#e8ecf8; padding-left:100px; padding-right:100px; padding-bottom:20px; padding-top:10px; height:900px" id="user_lists" >
+        <div style="background:#e8ecf8; padding-left:100px; padding-right:100px; padding-bottom:20px; padding-top:10px; height:900px" id="performance_router" >
             <div style="padding-bottom:10px">
-                <div>User | List users</div>
+                <div>Statistics | Performance counters</div>
             </div>
-            <div style="padding:30px; background:white">
-
-                <div style="display:flex; color:#5e5e5d">
-                    <i class="fa fa-list"></i>
-                    <h6>LIST OF USERS</h6>  
-                </div>
-                <hr style="color:silver">
-
-            </div>
+        
             <div style="padding:5px"></div>
 
             <div style="padding:30px; background:white">
@@ -267,7 +285,7 @@
                 <div style="display:flex; color:#5e5e5d" >
                     <i class="fa fa-user"></i>
 
-                    <h6>USERS</h6>  
+                    <h6>PERFORMANCE COUNTERS</h6>  
                 </div>
                 <hr style="color:silver">
                 <div>
@@ -275,30 +293,26 @@
                         <thead>
                           <tr>
                             <th>#</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Passwords</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Value</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>****</td>
+                            <td>Channel Full ADC_TRIGGER_CHANGE:5242881</td>
+                            <td>Channel Full ADC_TRIGGER_CHANGE:5242881</td>
+                            <td>0</td>
                           </tr>
                           <tr>
                             <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>****</td>
+                            <td>Channel Full CC TRIGGER:5242884</td>
+                            <td>Channel Counter for trigger CC TRIGGER</td>
+                            <td>0</td>
                           </tr>
                           <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>****</td>
-                          </tr>
+                       
                         </tbody>
                       </table>
                 </div>
@@ -310,6 +324,170 @@
    
            
         </div>
+        <!-- Kernel list -->
+        <div style="background:#e8ecf8; padding-left:100px; padding-right:100px; padding-bottom:20px; padding-top:10px; height:900px" id="kernel_router" >
+            <div style="padding-bottom:10px">
+                <div>Statistics | Kernel extensions</div>
+            </div>
+        
+            <div style="padding:5px"></div>
+
+            <div style="padding:30px; background:white">
+
+                <div style="display:flex; color:#5e5e5d" >
+                    <i class="fa fa-user"></i>
+
+                    <h6>KERNEL EXTENSION MODULES</h6>  
+                </div>
+                <hr style="color:silver">
+                <div>
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Value</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Channel Full ADC_TRIGGER_CHANGE:5242881</td>
+                            <td>Channel Full ADC_TRIGGER_CHANGE:5242881</td>
+                            <td>0</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Channel Full CC TRIGGER:5242884</td>
+                            <td>Channel Counter for trigger CC TRIGGER</td>
+                            <td>0</td>
+                          </tr>
+                          <tr>
+                       
+                        </tbody>
+                      </table>
+                </div>
+
+            </div>
+
+            
+
+   
+           
+        </div>
+        <!-- Service list -->
+        <div style="background:#e8ecf8; padding-left:100px; padding-right:100px; padding-bottom:20px; padding-top:10px; height:900px" id="service_router" >
+            <div style="padding-bottom:10px">
+                <div>Statistics | Service extensions</div>
+            </div>
+        
+            <div style="padding:5px"></div>
+
+            <div style="padding:30px; background:white">
+
+                <div style="display:flex; color:#5e5e5d" >
+                    <i class="fa fa-user"></i>
+
+                    <h6>SERVICE EXTENSION MODULES</h6>  
+                </div>
+                <hr style="color:silver">
+                <div>
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Value</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Auth</td>
+                            <td>Auth</td>
+                            <td>service_router</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>EventLog</td>
+                            <td>Eventlogger</td>
+                            <td>4074164</td>
+                          </tr>
+                          <tr>
+                       
+                        </tbody>
+                      </table>
+                </div>
+
+            </div>
+
+            
+
+   
+           
+        </div>
+        <!-- Group list -->
+        <div style="background:#e8ecf8; padding-left:100px; padding-right:100px; padding-bottom:20px; padding-top:10px; height:900px" id="group_lists" >
+            <div style="padding-bottom:10px">
+                <div>Group | List Groups</div>
+            </div>
+            <div style="padding:30px; background:white">
+
+                <div style="display:flex; color:#5e5e5d">
+                    <i class="fa fa-list"></i>
+                    <h6>LIST OF Groups</h6>  
+                </div>
+                <hr style="color:silver">
+
+            </div>
+            <div style="padding:5px"></div>
+
+            <div style="padding:30px; background:white">
+
+                <div style="display:flex; color:#5e5e5d" >
+                    <i class="fa fa-user"></i>
+
+                    <h6>Groups</h6>  
+                </div>
+                <hr style="color:silver">
+                <div>
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Group Name</th>
+                            <th>Access Name</th>
+                            <th>Privilleges</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Admins</td>
+                            <td>Monitor</td>
+                            <td>View, Edit</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Users</td>
+                            <td>Viewers</td>
+                            <td>view</td>
+                          </tr>
+                        
+                        </tbody>
+                      </table>
+                </div>
+
+            </div>
+
+            
+
+   
+           
+        </div>
+        <!-- User delete -->
         <div style="background:#e8ecf8; padding-left:100px; padding-right:100px; padding-bottom:20px; padding-top:10px; height:900px" id="user_delete" >
             <div style="padding-bottom:10px">
                 <div>User | Delete users</div>
@@ -449,6 +627,68 @@
                         <input type="text" placeholder="Role" style="height: 50px;  padding-left:50px">
                     </div>
                     <div style="padding:5px"></div>
+                    <div style="display:flex">
+                        <i class="fa fa-list" style="position: relative; top:15px; left:30px; font-size:20px"></i>
+                        <input type="password" placeholder="Password" style="height: 50px;  padding-left:50px">
+                    </div>
+                    <div style="padding:5px"></div>
+                    <div style="display:flex; justify-content:center">
+
+                        <button style="background:#A02A1E; height:50px; border: 1px solid transparent; color:white; width:30%"> SUBMIT</button>
+                    </div>
+    
+                </div>
+
+            </div>
+
+            
+
+   
+           
+        </div>
+        <div style="background:#e8ecf8; padding-left:100px; padding-right:100px; padding-bottom:20px; padding-top:10px; height:900px" id="add_group" >
+            <div style="padding-bottom:10px">
+                <div>Group | Add Group</div>
+            </div>
+            <div style="padding:30px; background:white">
+
+                <div style="display:flex; color:#5e5e5d">
+                    <i class="fa fa-user"></i>
+                    <h6>Add Group</h6>  
+                </div>
+                <hr style="color:silver">
+
+            </div>
+            <div style="padding:5px"></div>
+
+            <div style="padding:30px; background:white">
+
+                <div style="display:flex; color:#5e5e5d" >
+                    <i class="fa fa-user"></i>
+
+                    <h6>GROUPS</h6>
+                </div>
+                <hr style="color:silver">
+                <div style="padding-left: 50px; padding-right:100px">
+                
+                  
+                    <div style="display:flex">
+                        <i class="fa fa-user" style="position: relative; top:15px; left:30px; font-size:20px"></i>
+                        <input type="text" placeholder="Group name" style="height: 50px;  padding-left:50px">
+                    </div>
+               
+
+                    <div style="padding:5px"></div>
+                    <div style="display:flex">
+                        <i class="fa fa-envelope" style="position: relative; top:15px; left:30px; font-size:20px"></i>
+                        <input type="text" placeholder="Privilleges" style="height: 50px;  padding-left:50px">
+                    </div>
+                    <div style="padding:5px"></div>
+                    <div style="display:flex">
+                        <i class="fa fa-list" style="position: relative; top:15px; left:30px; font-size:20px"></i>
+                        <input type="text" placeholder="Access rights" style="height: 50px;  padding-left:50px">
+                    </div>
+                    <div style="padding:5px"></div>
                     <div style="display:flex; justify-content:center">
 
                         <button style="background:#A02A1E; height:50px; border: 1px solid transparent; color:white; width:30%"> SUBMIT</button>
@@ -567,6 +807,51 @@
    
            
         </div>
+        <!-- Edit user -->
+        <div style="background:#e8ecf8; padding-left:100px; padding-right:100px; padding-bottom:20px; padding-top:10px; height:900px" id="edit_group" >
+            <div style="padding-bottom:10px">
+                <div>User | Edit group</div>
+            </div>
+            <div style="padding:30px; background:white">
+
+                <div style="display:flex; color:#5e5e5d">
+                    <i class="fa fa-user"></i>
+                    <h6>Edit group</h6>  
+                </div>
+                <hr style="color:silver">
+
+            </div>
+            <div style="padding:5px"></div>
+
+            <div style="padding:30px; background:white">
+
+                <div style="display:flex; color:#5e5e5d" >
+                    <i class="fa fa-user"></i>
+
+                    <h6>GROUP</h6>  
+                </div>
+                <hr style="color:silver">
+                <div style="padding-left: 50px; padding-right:100px">
+                    <div style="display:flex">
+                        <i class="fa fa-user" style="position: relative; top:15px; left:30px; font-size:20px"></i>
+                        <input type="text" placeholder="username" style="height: 50px;  padding-left:50px" value="Admin">
+                    </div>
+     
+                    <div style="padding:5px"></div>
+                    <div style="display:flex; justify-content:center">
+
+                        <button style="background:#A02A1E; height:50px; border: 1px solid transparent; color:white; width:30%"> EDIT</button>
+                    </div>
+    
+                </div>
+
+            </div>
+
+            
+
+   
+           
+        </div>
 
 
 
@@ -598,85 +883,244 @@
       });
     });
 
-    //login button is clicked
-    $(function() {
-        $("#login-submit").click(function() {
-          $("#user_page").show();
-          $("#auth_page").hide();
-          $("#register_form").hide();
-          $("#login_form").hide();
+          //login button is clicked
+          $(function () {
+            $("#login-submit").click(function () {
+                $("#user_page").show();
+                $("#auth_page").hide();
+                $("#register_form").hide();
+                $("#login_form").hide();
+            });
         });
-      });
 
-    //add user button is clicked
-    $(function() {
-        $("#add_user_button").click(function() {
-          $("#add_user").show();
-          $("#edit_user").hide();
-          $("#user_lists").hide();
-          $("#register_form").hide();
-          $("#login_form").hide();
-          $("#user_delete").hide();
+        //add user button is clicked
+        $(function () {
+            $("#add_user_button").click(function () {
+                $("#add_user").show();
+                $("#edit_user").hide();
+                $("#user_lists").hide();
+                $("#user_configure").hide();
+                $("#register_form").hide();
+                $("#login_form").hide();
+                $("#group_lists").hide();
+                $("#service_router").hide();
+                $("#performance_router").hide();
+                $("#kernel_router").hide();
+                $("#add_group").hide();
+                $("#edit_group").hide();
+                $("#add_trigger").hide();
+                $("#user_delete").hide();
+            });
         });
-      });
-    //list user button is clicked
-    $(function() {
-        $("#list_user_button").click(function() {
-          $("#add_user").hide();
-          $("#user_lists").show();
-          $("#edit_user").edit();
-          $("#register_form").hide();
-          $("#user_delete").hide();
-          $("#login_form").hide();
+        //list user button is clicked
+        $(function () {
+            $("#list_user_button").click(function () {
+                $("#add_user").hide();
+                $("#user_lists").show();
+                $("#edit_user").edit();
+                $("#register_form").hide();
+                $("#add_trigger").hide();
+                $("#user_configure").hide();
+                $("#user_delete").hide();
+                $("#group_lists").hide();
+                $("#performance_router").hide();
+                $("#kernel_router").hide();
+                $("#edit_group").hide();
+                $("#service_router").hide();
+                $("#add_group").hide();
+                $("#login_form").hide();
+            });
         });
-      });
-      //eDIT USER BUTTON IS CLICKED
-    $(function() {
-        $("#edit_user_button").click(function() {
-          $("#add_user").hide();
-          $("#edit_user").show();
-          $("#user_lists").hide();
-          $("#user_delete").hide();
-          $("#register_form").hide();
-          $("#login_form").hide();
+        //eDIT USER BUTTON IS CLICKED
+        $(function () {
+            $("#edit_user_button").click(function () {
+                $("#add_user").hide();
+                $("#edit_user").show();
+                $("#user_lists").hide();
+                $("#user_delete").hide();
+                $("#add_trigger").hide();
+                $("#user_configure").hide();
+                $("#register_form").hide();
+                $("#group_lists").hide();
+                $("#service_router").hide();
+                $("#performance_router").hide();
+                $("#kernel_router").hide();
+                $("#edit_group").hide();
+                $("#add_group").hide();
+                $("#login_form").hide();
+            });
         });
-      });
-      //Delete user button is clicked
-    $(function() {
-        $("#delete_user_button").click(function() {
-          $("#add_user").hide();
-          $("#edit_user").hide();
-          $("#user_delete").show();
-          $("#user_lists").hide();
-          $("#register_form").hide();
-          $("#login_form").hide();
+        //Delete user button is clicked
+        $(function () {
+            $("#delete_user_button").click(function () {
+                $("#add_user").hide();
+                $("#edit_user").hide();
+                $("#user_delete").show();
+                $("#user_lists").hide();
+                $("#user_configure").hide();
+                $("#add_trigger").hide();
+                $("#register_form").hide();
+                $("#service_router").hide();
+                $("#group_lists").hide();
+                $("#performance_router").hide();
+                $("#kernel_router").hide();
+                $("#edit_group").hide();
+                $("#add_group").hide();
+                $("#login_form").hide();
+            });
         });
-      });
-      //Configure button is clicked
-    $(function() {
-        $("#configure_user_button").click(function() {
-          $("#add_user").hide();
-          $("#edit_user").hide();
-          $("#user_delete").hide();
-          $("#user_configure").show();
-          $("#user_lists").hide();
-          $("#register_form").hide();
-          $("#login_form").hide();
+        //Configure button is clicked
+        $(function () {
+            $("#configure_user_button").click(function () {
+                $("#add_user").hide();
+                $("#edit_user").hide();
+                $("#user_delete").hide();
+                $("#user_configure").show();
+                $("#user_lists").hide();
+                $("#add_trigger").hide();
+                $("#register_form").hide();
+                $("#group_lists").hide();
+                $("#performance_router").hide();
+                $("#service_router").hide();
+                $("#edit_group").hide();
+                $("#kernel_router").hide();
+                $("#add_group").hide();
+                $("#login_form").hide();
+            });
         });
-      });
-    $(function() {
-        $("#trigger_user_button").click(function() {
-          $("#add_user").hide();
-          $("#edit_user").hide();
-          $("#user_delete").hide();
-          $("#user_configure").hide();
-          $("#add_trigger").show();
-          $("#user_lists").hide();
-          $("#register_form").hide();
-          $("#login_form").hide();
+        //Trace button is clicked
+        $(function () {
+            $("#trigger_user_button").click(function () {
+                $("#add_user").hide();
+                $("#edit_user").hide();
+                $("#user_delete").hide();
+                $("#user_configure").hide();
+                $("#add_trigger").show();
+                $("#user_lists").hide();
+                $("#group_lists").hide();
+                $("#add_group").hide();
+                $("#performance_router").hide();
+                $("#kernel_router").hide();
+                $("#service_router").hide();
+                $("#edit_group").hide();
+                $("#register_form").hide();
+                $("#login_form").hide();
+            });
         });
-      });
+        //Performance clicked
+        $(function () {
+            $("#performance_counter").click(function () {
+                $("#add_user").hide();
+                $("#edit_user").hide();
+                $("#user_delete").hide();
+                $("#user_configure").hide();
+                $("#performance_router").show();
+                $("#add_trigger").hide();
+                $("#group_lists").hide();
+                $("#add_group").hide();
+                $("#kernel_router").hide();
+                $("#user_lists").hide();
+                $("#service_router").hide();
+                $("#edit_group").hide();
+                $("#register_form").hide();
+                $("#login_form").hide();
+            });
+        });
 
-  </script>
+        $(function () {
+            $("#add_group_button").click(function () {
+                $("#add_user").hide();
+                $("#edit_user").hide();
+                $("#user_delete").hide();
+                $("#user_configure").hide();
+                $("#add_group").show();
+                $("#group_lists").hide();
+                $("#performance_router").hide();
+                $("#add_trigger").hide();
+                $("#service_router").hide();
+                $("#user_lists").hide();
+                $("#kernel_router").hide();
+                $("#edit_group").hide();
+                $("#register_form").hide();
+                $("#login_form").hide();
+            });
+        });
+
+        $(function () {
+            $("#list_group_button").click(function () {
+                $("#add_user").hide();
+                $("#edit_user").hide();
+                $("#user_delete").hide();
+                $("#user_configure").hide();
+                $("#performance_router").hide();
+                $("#add_group").hide();
+                $("#group_lists").show();
+                $("#add_trigger").hide();
+                $("#user_lists").hide();
+                $("#service_router").hide();
+                $("#edit_group").show();
+                $("#kernel_router").hide();
+                $("#register_form").hide();
+                $("#login_form").hide();
+            });
+        });
+        $(function () {
+            $("#edit_group_button").click(function () {
+                $("#add_user").hide();
+                $("#edit_user").hide();
+                $("#user_delete").hide();
+                $("#user_configure").hide();
+                $("#performance_router").hide();
+                $("#add_group").hide();
+                $("#group_lists").hide();
+                $("#edit_group").show();
+                $("#service_router").hide();
+                $("#kernel_router").hide();
+                $("#add_trigger").hide();
+                $("#user_lists").hide();
+                $("#register_form").hide();
+                $("#login_form").hide();
+            });
+        });
+
+        $(function () {
+            $("#kernel_extension").click(function () {
+                $("#add_user").hide();
+                $("#edit_user").hide();
+                $("#user_delete").hide();
+                $("#user_configure").hide();
+                $("#performance_router").hide();
+                $("#kernel_router").show();
+                $("#add_group").hide();
+                $("#service_router").hide();
+                $("#group_lists").hide();
+                $("#edit_group").hide();
+                $("#add_trigger").hide();
+                $("#user_lists").hide();
+                $("#register_form").hide();
+                $("#login_form").hide();
+            });
+        });
+        $(function () {
+            $("#servce_extension").click(function () {
+                $("#add_user").hide();
+                $("#edit_user").hide();
+                $("#user_delete").hide();
+                $("#user_configure").hide();
+                $("#performance_router").hide();
+                $("#kernel_router").hide();
+                $("#service_router").show();
+                $("#add_group").hide();
+                $("#group_lists").hide();
+                $("#edit_group").hide();
+                $("#add_trigger").hide();
+                $("#user_lists").hide();
+                $("#register_form").hide();
+                $("#login_form").hide();
+            });
+        });
+
+    </script>
 </body>
 </html>
+
